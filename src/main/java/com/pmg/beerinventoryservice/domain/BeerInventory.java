@@ -2,18 +2,19 @@ package com.pmg.beerinventoryservice.domain;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import java.sql.Timestamp;
 import java.util.UUID;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class BeerInventory {
+@Entity
+public class BeerInventory extends BaseEntity{
 
     private UUID beerId;
-
     private String upc;
     private Integer quantityOnHand = 0;
 

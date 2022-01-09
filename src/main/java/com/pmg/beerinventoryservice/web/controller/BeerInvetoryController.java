@@ -1,13 +1,11 @@
 package com.pmg.beerinventoryservice.web.controller;
 
-import com.pmg.beerinventoryservice.domain.BeerInventory;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.pmg.beerinventoryservice.web.model.BeerInventoryDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -16,13 +14,14 @@ import java.util.UUID;
 public class BeerInvetoryController {
 
     @GetMapping("/api/v1/beer/{beerId}/inventory")
-    public List<BeerInventory> listBeerById(@PathVariable UUID beerId) {
+    public List<BeerInventoryDto> listBeerById(@PathVariable UUID beerId) {
 
-        List<BeerInventory> result = Arrays.asList(
-                BeerInventory.builder()
+        List<BeerInventoryDto> result = Arrays.asList(BeerInventoryDto.builder()
                 .beerId(UUID.randomUUID())
+                .createDate(OffsetDateTime.now())
+                .lastModifiedDate(OffsetDateTime.now())
                 .quantityOnHand(12)
-                .upc("Antonia")
+                .upc("hola")
                 .build());
 
         return result;
