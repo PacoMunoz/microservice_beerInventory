@@ -1,6 +1,7 @@
 package com.pmg.beerinventoryservice.service;
 
 import com.pmg.beerinventoryservice.repository.BeerInventoryRepository;
+import com.pmg.beerinventoryservice.web.controller.NotFoundException;
 import com.pmg.beerinventoryservice.web.mapper.BeerInventoryMapper;
 import com.pmg.beerinventoryservice.web.model.BeerInventoryDto;
 import org.springframework.stereotype.Service;
@@ -34,12 +35,12 @@ public class BeerInventoryServiceImpl implements BeerInventoryService {
     @Override
     public BeerInventoryDto findByBeerId(UUID beerId) {
         return beerInventoryMapper.beerInventoryToBeerInventoryDto(beerInventoryRepository
-                .findByBeerId(beerId).orElse(null));
+                .findByBeerId(beerId).orElseThrow(NotFoundException::new));
     }
 
     @Override
     public BeerInventoryDto findByUPC(String upc) {
         return beerInventoryMapper.beerInventoryToBeerInventoryDto(beerInventoryRepository.findByUpc(upc)
-                .orElse(null));
+                .orElseThrow(NotFoundException::new));
     }
 }
