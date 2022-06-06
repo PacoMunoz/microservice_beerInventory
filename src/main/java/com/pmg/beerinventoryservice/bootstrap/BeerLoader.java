@@ -34,17 +34,17 @@ public class BeerLoader implements CommandLineRunner {
     private void loadBeerRepositoryObjects() {
         beerRepository.save(BeerInventory.builder()
                 .beerId(BEER_1_UUID)
-                .quantityOnHand(12)
+                .quantityOnHand(50)
                 .upc(BEER_1_UPC)
                 .build());
         beerRepository.save(BeerInventory.builder()
                 .beerId(BEER_2_UUID)
-                .quantityOnHand(10)
+                .quantityOnHand(50)
                 .upc(BEER_2_UPC)
                 .build());
         beerRepository.save(BeerInventory.builder()
                 .beerId(BEER_3_UUID)
-                .quantityOnHand(20)
+                .quantityOnHand(50)
                 .upc(BEER_3_UPC)
                 .build());
     }
