@@ -15,7 +15,7 @@ import java.util.UUID;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "beer_inventory")
 public class BaseEntity {
 
     @Id
