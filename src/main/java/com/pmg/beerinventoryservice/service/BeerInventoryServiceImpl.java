@@ -2,7 +2,7 @@ package com.pmg.beerinventoryservice.service;
 
 import com.pmg.beerinventoryservice.repository.BeerInventoryRepository;
 import com.pmg.beerinventoryservice.web.mapper.BeerInventoryMapper;
-import com.pmg.beerinventoryservice.web.model.BeerInventoryDto;
+import com.pmg.brewery.model.BeerInventoryDto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

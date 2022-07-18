@@ -1,7 +1,7 @@
 package com.pmg.beerinventoryservice.web.controller;
 
 import com.pmg.beerinventoryservice.service.BeerInventoryService;
-import com.pmg.beerinventoryservice.web.model.BeerInventoryDto;
+import com.pmg.brewery.model.BeerInventoryDto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

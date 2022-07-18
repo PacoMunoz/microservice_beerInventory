@@ -1,6 +1,6 @@
 package com.pmg.beerinventoryservice.service;
 
-import com.pmg.beerinventoryservice.web.model.BeerInventoryDto;
+import com.pmg.brewery.model.BeerInventoryDto;
 
 import java.util.List;
 import java.util.UUID;
