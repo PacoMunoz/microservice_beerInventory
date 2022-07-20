@@ -2,7 +2,7 @@ package com.pmg.beerinventoryservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pmg.beerinventoryservice.service.BeerInventoryService;
-import com.pmg.beerinventoryservice.web.model.BeerInventoryDto;
+import com.pmg.brewery.model.BeerInventoryDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -94,7 +94,7 @@ class BeerInvetoryControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 // como solo devuelve un elemento, se comprueba que esta formado por 6 elementos.
-                .andExpect(jsonPath("$.*", hasSize(6)))
+                .andExpect(jsonPath("$.*", hasSize(7)))
                 .andExpect(jsonPath("$.upc", is(BEER_1_UPC)));
 
         then(beerInventoryService).should().findByBeerId(any());
